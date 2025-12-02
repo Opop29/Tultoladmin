@@ -1115,6 +1115,15 @@
   --width: 320px !important;
   --background: linear-gradient(180deg, #0b2e66 0%, #1a365d 50%, #2d3748 100%) !important;
   --border-radius: 0 !important;
+  background: linear-gradient(180deg, #0b2e66 0%, #1a365d 50%, #2d3748 100%) !important;
+}
+
+.sidebar-menu::part(container) {
+  background: linear-gradient(180deg, #0b2e66 0%, #1a365d 50%, #2d3748 100%) !important;
+}
+
+.sidebar-menu::part(content) {
+  background: transparent !important;
 }
 
 .sidebar-header {
@@ -1251,17 +1260,19 @@
 }
 
 .sidebar-nav-item {
-  --background: rgba(255, 255, 255, 0.08);
-  --background-hover: rgba(255, 255, 255, 0.12);
-  --background-activated: rgba(255, 255, 255, 0.15);
-  --color: #ffffff;
-  --border-radius: 12px;
-  margin: 6px 16px;
-  --padding-start: 16px;
-  --padding-end: 16px;
-  --inner-padding-end: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
+  --background: rgba(255, 255, 255, 0.08) !important;
+  --background-hover: rgba(255, 255, 255, 0.12) !important;
+  --background-activated: rgba(255, 255, 255, 0.15) !important;
+  --color: #ffffff !important;
+  --border-radius: 12px !important;
+  margin: 6px 16px !important;
+  --padding-start: 16px !important;
+  --padding-end: 16px !important;
+  --inner-padding-end: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.2s ease !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
 }
 
 .sidebar-nav-item:hover {
