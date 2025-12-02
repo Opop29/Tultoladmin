@@ -10,6 +10,8 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  
+  base :"/Tultoladmin",
   test: {
     globals: true,
     environment: 'jsdom',
