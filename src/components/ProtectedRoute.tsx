@@ -11,14 +11,10 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   component: Component,
   ...rest
 }) => {
-  const isAuth = localStorage.getItem("authenticated") === "true";
-
   return (
     <Route
       {...rest}
-      render={(props) =>
-        isAuth ? <Component {...props} /> : <Redirect to="/Tultoladmin/enter-passcode" />
-      }
+      component={Component}
     />
   );
 };

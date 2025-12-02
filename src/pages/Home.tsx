@@ -33,6 +33,7 @@ import {
 } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
 import { supabase } from "../utils/supabaseClient";
+import logo from '../assets/Adobe_Express_-_file-removebg-preview.png';
 import "../css/Home.css";
 
 interface Marker {
@@ -101,11 +102,8 @@ const Home: React.FC = () => {
 
   const handleLogout = () => {
     setLoggingOut(true);
-    localStorage.removeItem("authenticated");
-    setTimeout(() => {
-      try { history.replace("/Tultoladmin/enter-passcode"); } catch {}
-      try { window.location.href = "/Tultoladmin/enter-passcode"; } catch {}
-    }, 2000);
+    history.push("/Tultoladmin/enter-passcode");
+    setLoggingOut(false);
   };
 
   const navigateTo = (path: string) => {
@@ -183,7 +181,7 @@ const Home: React.FC = () => {
                 <div className="floating-particles"></div>
                 <div className="hero-content">
                   <div className="hero-logo">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp9gZnSEdoA-GxkfjMOZy_NaQPGNM2OIRu9jysFNX_g3kY3zqYz8ii8sVO7-FbywES96A&usqp=CAU" alt="Logo" className="app-logo enhanced-logo" />
+                    <img src={logo} alt="Logo" className="app-logo enhanced-logo" />
                   </div>
                   <h1 className="home-title">
                     <span className="title-main">🏛️ Tultol</span>

@@ -8,14 +8,10 @@ interface PublicRouteProps {
 }
 
 const PublicRoute: React.FC<PublicRouteProps> = ({ component: Component, ...rest }) => {
-  const isAuth = localStorage.getItem("authenticated") === "true";
-
   return (
     <Route
       {...rest}
-      render={(props) =>
-        isAuth ? <Redirect to="/Tultoladmin/home" /> : <Component {...props} />
-      }
+      component={Component}
     />
   );
 };

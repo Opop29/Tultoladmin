@@ -10,6 +10,7 @@ import {
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 import { supabase } from "../utils/supabaseClient";
+import logo from '../assets/Adobe_Express_-_file-removebg-preview.png';
 import "../css/Home.css";
 import "../css/EnterPasscode.css";
 
@@ -45,12 +46,6 @@ const EnterPasscode: React.FC = () => {
     }, 0);
   });
 
-  useEffect(() => {
-    const isAuth = localStorage.getItem("authenticated") === "true";
-    if (isAuth) {
-      history.replace("/Tultoladmin/home");
-    }
-  }, [history]);
 
   useEffect(() => {
    
@@ -103,7 +98,6 @@ const EnterPasscode: React.FC = () => {
     } else {
       vibrate(150);
       showModal("✅ Access Granted", "success");
-      localStorage.setItem("authenticated", "true");
       setSuccessLoading(true);
       setTimeout(() => {
         setSuccessLoading(false);
@@ -200,7 +194,7 @@ const EnterPasscode: React.FC = () => {
           }}>
             {/* Logo */}
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp9gZnSEdoA-GxkfjMOZy_NaQPGNM2OIRu9jysFNX_g3kY3zqYz8ii8sVO7-FbywES96A&usqp=CAU"
+              src={logo}
               alt="Logo"
               className="app-logo enhanced-logo"
               style={{marginBottom: '20px'}}

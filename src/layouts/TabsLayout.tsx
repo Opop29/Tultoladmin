@@ -13,9 +13,12 @@ import Home from "../pages/Home";
 import MapMarker from "../pages/MapMarker";
 import Builded from "../pages/Builded";
 import Report from "../pages/Report";
+import EnterPasscode from "../pages/EnterPasscode";
 import "../css/Tabs.css";
 import AppMenu from "../components/AppMenu";
 import { menuController } from "@ionic/core";
+import ProtectedRoute from "../components/ProtectedRoute";
+import PublicRoute from "../components/PublicRoute";
 
 const TabsLayout: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,15 +52,16 @@ const TabsLayout: React.FC = () => {
       <AppMenu />
       <IonTabs>
       <IonRouterOutlet id="main">
-        <Route exact path="/Tultoladmin">
-          <Redirect to="/Tultoladmin/home" />
+        <Route exact path="/">
+          <Redirect to="/Tultoladmin/enter-passcode" />
         </Route>
-        <Route exact path="/Tultoladmin/home" component={Home} />
-        <Route exact path="/Tultoladmin/MapMarker" component={MapMarker} />
-        <Route exact path="/Tultoladmin/builded" component={Builded} />
-        <Route exact path="/Tultoladmin/report" component={Report} />
-        <Route exact path="/Tultoladmin/tabs">
-          <Redirect to="/Tultoladmin/home" />
+        <PublicRoute exact path="/Tultoladmin/enter-passcode" component={EnterPasscode} />
+        <ProtectedRoute exact path="/Tultoladmin/home" component={Home} />
+        <ProtectedRoute exact path="/Tultoladmin/MapMarker" component={MapMarker} />
+        <ProtectedRoute exact path="/Tultoladmin/builded" component={Builded} />
+        <ProtectedRoute exact path="/Tultoladmin/report" component={Report} />
+        <Route exact path="/Tultoladmin">
+          <Redirect to="/Tultoladmin/enter-passcode" />
         </Route>
       </IonRouterOutlet>
 

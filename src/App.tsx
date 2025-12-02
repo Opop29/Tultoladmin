@@ -1,8 +1,6 @@
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import Home from "./pages/Home";
-import EnterPasscode from "./pages/EnterPasscode";
 
 import "@ionic/react/css/core.css";
 import "@ionic/react/css/normalize.css";
@@ -24,13 +22,8 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/Tultoladmin/enter-passcode" component={EnterPasscode} />
-        <Route exact path="/Tultoladmin/home" component={Home} />
-        <Route exact path="/Tultoladmin/">
-          <Redirect to="/Tultoladmin/home" />
-        </Route>
+        <Route path="/" component={TabsLayout} />
       </IonRouterOutlet>
-      <Route path="/Tultoladmin" component={TabsLayout} />
     </IonReactRouter>
   </IonApp>
 );
