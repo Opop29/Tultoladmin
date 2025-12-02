@@ -12,7 +12,7 @@ import {
   IonCard,
   IonCardContent,
 } from "@ionic/react";
-import { logOutOutline, sendOutline, documentTextOutline } from "ionicons/icons";
+import { logOutOutline, sendOutline, documentTextOutline, trashOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
 import logo from '../assets/Adobe_Express_-_file-removebg-preview.png';
 import "../css/AppMenu.css";
@@ -54,11 +54,18 @@ const AppMenu: React.FC = () => {
     setNoteContent('');
   };
 
+  // Delete note function
+  const deleteNote = (id: string) => {
+    const updatedNotes = notes.filter(note => note.id !== id);
+    setNotes(updatedNotes);
+    localStorage.setItem('adminNotes', JSON.stringify(updatedNotes));
+  };
+
   const handleLogout = async () => {
     setLoggingOut(true);
     try { await menuController.close(); } catch {}
     history.push("/Tultoladmin/enter-passcode");
-    setLoggingOut(false);
+    window.location.reload();
   };
 
   const handleMenuDidOpen = () => {
@@ -96,6 +103,13 @@ const AppMenu: React.FC = () => {
             <span className="status-dot"></span>
             <span className="status-text">🟢 Online & Ready</span>
           </div>
+        </div>
+
+        <div className="sidebar-footer">
+          <IonButton expand="full" color="danger" onClick={handleLogout} disabled={loggingOut} className="sidebar-logout-btn">
+            <IonIcon slot="start" icon={logOutOutline} />
+            Sign Out
+          </IonButton>
         </div>
 
         {/* Notes Section */}
@@ -171,6 +185,16 @@ const AppMenu: React.FC = () => {
                             {note.date}
                           </small>
                         </div>
+                        <IonIcon
+                          icon={trashOutline}
+                          onClick={() => deleteNote(note.id)}
+                          style={{
+                            color: 'rgba(239, 68, 68, 0.8)',
+                            fontSize: '16px',
+                            cursor: 'pointer',
+                            marginTop: '2px'
+                          }}
+                        />
                       </div>
                     </IonCardContent>
                   </IonCard>
@@ -178,13 +202,6 @@ const AppMenu: React.FC = () => {
               </div>
             </div>
           )}
-        </div>
-
-        <div className="sidebar-footer">
-          <IonButton expand="full" color="danger" onClick={handleLogout} disabled={loggingOut} className="sidebar-logout-btn">
-            <IonIcon slot="start" icon={logOutOutline} />
-            Sign Out
-          </IonButton>
         </div>
       </IonContent>
     </IonMenu>

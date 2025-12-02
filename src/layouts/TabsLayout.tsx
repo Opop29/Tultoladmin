@@ -49,7 +49,7 @@ const TabsLayout: React.FC = () => {
   }, [menuOpen]);
   return (
     <>
-      <AppMenu />
+      {location.pathname !== '/Tultoladmin/enter-passcode' && <AppMenu />}
       <IonTabs>
         <IonRouterOutlet id="main">
           <Route exact path="/">
