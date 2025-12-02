@@ -214,7 +214,11 @@ const Builded: React.FC = () => {
      return;
    }
    console.log('Saving marker ID:', p.id, 'Type:', typeof p.id);
-   console.log('Update data:', {
+
+   // Get current marker data to compare
+   const currentMarker = pois.find(marker => marker.id === p.id);
+   console.log('Current marker data:', currentMarker);
+   console.log('New data to save:', {
      label: p.label,
      mark_type: p.mark_type,
      color: p.color,
@@ -222,6 +226,25 @@ const Builded: React.FC = () => {
      lat: p.lat,
      lng: p.lng,
    });
+
+   // Check if data actually changed
+   const hasChanges = !currentMarker ||
+     currentMarker.label !== p.label ||
+     currentMarker.mark_type !== p.mark_type ||
+     currentMarker.color !== p.color ||
+     currentMarker.height !== p.height ||
+     currentMarker.lat !== p.lat ||
+     currentMarker.lng !== p.lng;
+
+   console.log('Has changes:', hasChanges);
+
+   if (!hasChanges) {
+     console.log('No changes detected, skipping update');
+     alert('No changes detected. The data is the same as current.');
+     setSelected(null);
+     return;
+   }
+
    try {
      const { data, error } = await supabase
        .from("ar_pois")
