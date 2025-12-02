@@ -1,19 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   IonMenu,
   IonHeader,
+  IonToolbar,
+  IonTitle,
   IonContent,
   IonList,
   IonItem,
   IonIcon,
   IonLabel,
+  IonAvatar,
   IonButton,
   IonLoading,
 } from "@ionic/react";
-import { homeOutline, addCircleOutline, constructOutline, logOutOutline } from "ionicons/icons";
+import { homeOutline, addCircleOutline, constructOutline, barChartOutline, logOutOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
-import { menuController } from "@ionic/core";
 import "../css/Home.css";
+import { menuController } from "@ionic/core";
 
 const AppMenu: React.FC = () => {
   const history = useHistory();
@@ -22,11 +25,11 @@ const AppMenu: React.FC = () => {
 
   const handleLogout = async () => {
     setLoggingOut(true);
-    localStorage.clear(); // Clear all stored data
+    localStorage.removeItem("authenticated");
     try { await menuController.close(); } catch {}
     setTimeout(() => {
-      // Since authentication was removed, just reload the page
-      window.location.reload();
+      try { history.replace("/Tultoladmin/enter-passcode"); } catch {}
+      try { window.location.href = "/Tultoladmin/enter-passcode"; } catch {}
     }, 2000);
   };
 
@@ -70,17 +73,21 @@ const AppMenu: React.FC = () => {
         </div>
 
         <IonList className="sidebar-nav">
-           <IonItem ref={firstMenuItemRef} routerLink="/Tultoladmin" button detail={false} lines="none" className="sidebar-nav-item">
+           <IonItem ref={firstMenuItemRef} routerLink="/Tultoladmin/home" button detail={false} lines="none" className="sidebar-nav-item">
              <IonIcon slot="start" icon={homeOutline} />
              <IonLabel>Home Dashboard</IonLabel>
            </IonItem>
-          <IonItem routerLink="/Tultoladmin/menu" button detail={false} lines="none" className="sidebar-nav-item">
+          <IonItem routerLink="/Tultoladmin/MapMarker" button detail={false} lines="none" className="sidebar-nav-item">
             <IonIcon slot="start" icon={addCircleOutline} />
-            <IonLabel>Menu</IonLabel>
+            <IonLabel>Create Markers</IonLabel>
           </IonItem>
-          <IonItem routerLink="/Tultoladmin/templat" button detail={false} lines="none" className="sidebar-nav-item">
+          <IonItem routerLink="/Tultoladmin/builded" button detail={false} lines="none" className="sidebar-nav-item">
             <IonIcon slot="start" icon={constructOutline} />
-            <IonLabel>Template</IonLabel>
+            <IonLabel>Manage Markers</IonLabel>
+          </IonItem>
+          <IonItem routerLink="/Tultoladmin/report" button detail={false} lines="none" className="sidebar-nav-item">
+            <IonIcon slot="start" icon={barChartOutline} />
+            <IonLabel>Reports & Analytics</IonLabel>
           </IonItem>
         </IonList>
 

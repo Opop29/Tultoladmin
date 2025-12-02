@@ -1,0 +1,129 @@
+.tabs-bar {
+  --background: linear-gradient(180deg, #0b2e66 0%, #1a365d 50%, #2d3748 100%);
+  --color: rgba(255, 255, 255, 0.7);
+  --color-selected: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 12px;
+  margin: 4px;
+  overflow: hidden;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.tab-btn:hover::before {
+  left: 100%;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  --color: #ffffff;
+}
+
+.tab-btn.ion-selected {
+  background: rgba(255, 255, 255, 0.12);
+  --color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tab-btn.ion-selected:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tab-btn .tab-indicator {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 8px;
+  height: 3px;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6, #1d4ed8);
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(96, 165, 250, 0.3);
+}
+
+.tab-btn.ion-selected .tab-indicator {
+  transform: scaleX(1);
+}
+
+/* Enhanced tab icons */
+.tab-btn ion-icon {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover ion-icon,
+.tab-btn.ion-selected ion-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Tab labels */
+.tab-btn ion-label {
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover ion-label,
+.tab-btn.ion-selected ion-label {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .tabs-bar {
+    --background: linear-gradient(180deg, #0b2e66 0%, #1a365d 70%, #2d3748 100%);
+    padding: 0 8px;
+  }
+
+  .tab-btn {
+    margin: 2px;
+    min-height: 56px;
+  }
+
+  .tab-btn .tab-indicator {
+    left: 16px;
+    right: 16px;
+    bottom: 6px;
+    height: 2px;
+  }
+
+  .tab-btn ion-icon {
+    font-size: 20px;
+  }
+
+  .tab-btn ion-label {
+    font-size: 11px;
+    font-weight: 600;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .tabs-bar {
+    --background: linear-gradient(180deg, #0b2e66 0%, #1a365d 50%, #2d3748 100%);
+    --color: rgba(255, 255, 255, 0.7);
+    --color-selected: #ffffff;
+  }
+}
+
+

@@ -1,0 +1,341 @@
+
+.builded-wrap {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh;
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.list-container {
+  width: 100%;
+}
+
+.combined-container {
+  flex: 1;
+  min-height: 0;
+}
+
+.combined-container .builded-card {
+  height: 100%;
+  overflow: auto;
+}
+
+.bottom-boxes {
+  display: flex;
+  gap: 200px;
+}
+
+.details-container,
+.edit-container {
+  width: 100%;
+}
+
+.map-container {
+  flex: 1;
+  min-height: 0;
+}
+
+.builded-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+
+.builded-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.builded-card h3, .builded-card h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.poi-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.poi-item {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 180px;
+}
+
+.poi-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.poi-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.poi-label {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.poi-coords {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.poi-type {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.poi-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 102, 204, 0.3);
+  display: inline-block;
+  margin-left: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.poi-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.poi-actions .btn.danger {
+  grid-column: span 1;
+  min-height: 36px;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-2px);
+  transition: all 0.1s ease;
+}
+
+.btn.view {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);
+}
+
+.btn.edit {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(240, 147, 251, 0.3);
+}
+
+.btn.danger {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  box-shadow: 0 4px 16px rgba(238, 90, 82, 0.3);
+  font-weight: 600;
+}
+
+.btn.danger:hover {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  box-shadow: 0 8px 24px rgba(238, 90, 82, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn.danger:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(238, 90, 82, 0.3);
+}
+
+.empty {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 32px;
+  font-style: italic;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Form elements */
+.builded-card input, .builded-card select, .builded-card textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  transition: all 0.2s ease;
+  margin-bottom: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.builded-card input:focus, .builded-card select:focus, .builded-card textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Color input specific styling */
+.builded-card input[type="color"] {
+  height: 50px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.builded-card input[type="color"]:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Select dropdown styling */
+.builded-card select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.builded-card select option {
+  background: rgba(11, 46, 102, 0.95);
+  color: #ffffff;
+  padding: 8px;
+}
+
+.builded-card label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 6px;
+  display: block;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button layouts for different sections */
+.details-container .btn,
+.edit-container .btn {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.details-container .btn:last-child,
+.edit-container .btn:last-child {
+  margin-right: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .builded-wrap {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .builded-card {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .bottom-boxes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .list-container .builded-card {
+    height: 300px;
+  }
+
+  .poi-actions {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .poi-actions .btn {
+    min-height: 40px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .builded-wrap {
+    max-width: 1000px;
+  }
+}

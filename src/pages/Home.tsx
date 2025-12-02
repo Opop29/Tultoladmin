@@ -21,6 +21,7 @@ import {
   IonRefresherContent,
 } from "@ionic/react";
 import {
+  logOutOutline,
   locationOutline,
   mapOutline,
   constructOutline,
@@ -52,6 +53,7 @@ interface DashboardStats {
 
 const Home: React.FC = () => {
   const history = useHistory();
+  const [loggingOut, setLoggingOut] = useState(false);
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -97,6 +99,14 @@ const Home: React.FC = () => {
     event.detail.complete();
   };
 
+  const handleLogout = () => {
+    setLoggingOut(true);
+    localStorage.removeItem("authenticated");
+    setTimeout(() => {
+      try { history.replace("/Tultoladmin/enter-passcode"); } catch {}
+      try { window.location.href = "/Tultoladmin/enter-passcode"; } catch {}
+    }, 2000);
+  };
 
   const navigateTo = (path: string) => {
     history.push(path);
@@ -161,6 +171,8 @@ const Home: React.FC = () => {
           </div>
           <div className="wave-overlay"></div>
 
+          {loggingOut && <div className="global-blur" />}
+          <IonLoading isOpen={loggingOut} message="Signing out..." spinner="crescent" />
 
           {/* Main Dashboard Container */}
           <div className="dashboard-container">
@@ -196,7 +208,7 @@ const Home: React.FC = () => {
                 <IonGrid className="stats-grid">
                   <IonRow>
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card total-markers" onClick={() => navigateTo('/Tultoladmin/menu')}>
+                      <IonCard className="stat-card total-markers" onClick={() => navigateTo('/Tultoladmin/report')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={locationOutline} />
@@ -210,7 +222,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card marker-types" onClick={() => navigateTo('/Tultoladmin/menu')}>
+                      <IonCard className="stat-card marker-types" onClick={() => navigateTo('/Tultoladmin/report')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={analyticsOutline} />
@@ -224,7 +236,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card recent-activity" onClick={() => navigateTo('/Tultoladmin/templat')}>
+                      <IonCard className="stat-card recent-activity" onClick={() => navigateTo('/Tultoladmin/builded')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={timeOutline} />
@@ -238,7 +250,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card quick-actions" onClick={() => navigateTo('/Tultoladmin/menu')}>
+                      <IonCard className="stat-card quick-actions" onClick={() => navigateTo('/Tultoladmin/MapMarker')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={addCircleOutline} />
@@ -294,7 +306,7 @@ const Home: React.FC = () => {
                 <IonGrid className="actions-grid">
                   <IonRow>
                     <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/menu')}>
+                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/MapMarker')}>
                         <IonCardContent>
                           <div className="action-content">
                             <IonIcon icon={mapOutline} />
@@ -309,7 +321,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/templat')}>
+                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/builded')}>
                         <IonCardContent>
                           <div className="action-content">
                             <IonIcon icon={constructOutline} />
@@ -324,7 +336,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/menu')}>
+                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/report')}>
                         <IonCardContent>
                           <div className="action-content">
                             <IonIcon icon={barChartOutline} />
@@ -338,6 +350,20 @@ const Home: React.FC = () => {
                       </IonCard>
                     </IonCol>
 
+                    <IonCol size="6" sizeMd="6">
+                      <IonCard className="action-card logout-card" onClick={handleLogout} disabled={loggingOut}>
+                        <IonCardContent>
+                          <div className="action-content">
+                            <IonIcon icon={logOutOutline} />
+                            <div>
+                              <h3>Logout</h3>
+                              <p>Securely sign out of your account</p>
+                            </div>
+                          </div>
+                          <IonIcon icon={logOutOutline} className="action-arrow" />
+                        </IonCardContent>
+                      </IonCard>
+                    </IonCol>
                   </IonRow>
                 </IonGrid>
               </div>
@@ -353,7 +379,7 @@ const Home: React.FC = () => {
                 <div className="section-content">
                   <div className="recent-activity">
                     {stats.recentMarkers.map((marker, index) => (
-                      <IonCard key={marker.id} className="activity-card" onClick={() => navigateTo('/Tultoladmin/templat')}>
+                      <IonCard key={marker.id} className="activity-card" onClick={() => navigateTo('/Tultoladmin/builded')}>
                         <IonCardContent>
                           <div className="activity-content">
                             <div className="activity-icon">

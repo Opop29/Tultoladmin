@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="72" viewBox="0 0 48 72" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pin base shadow -->
+  <ellipse cx="24" cy="66" rx="14" ry="5" fill="#00000044" />
+  
+  <!-- Pin stem with 3D effect -->
+  <path d="M24 60V35" stroke="#444444" stroke-width="8" stroke-linecap="round" />
+  <path d="M24 60V35" stroke="#666666" stroke-width="6" stroke-linecap="round" />
+  
+  <!-- Pin head with 3D effect -->
+  <g>
+    <!-- Main pin head with 3D gradient -->
+    <circle cx="24" cy="24" r="18" fill="url(#pinGradient)" stroke="#444444" stroke-width="1.5" />
+    
+    <!-- Inner circle for depth -->
+    <circle cx="24" cy="24" r="12" fill="url(#innerGradient)" />
+    
+    <!-- Highlight for 3D effect -->
+    <circle cx="20" cy="18" r="6" fill="#ffffff60" />
+    
+    <!-- Small dot in center -->
+    <circle cx="24" cy="24" r="2" fill="#444444" />
+  </g>
+  
+  <!-- Definitions for gradients -->
+  <defs>
+    <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5555" />
+      <stop offset="100%" stop-color="#aa0000" />
+    </linearGradient>
+    <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7777" />
+      <stop offset="100%" stop-color="#cc0000" />
+    </linearGradient>
+  </defs>
+</svg>
