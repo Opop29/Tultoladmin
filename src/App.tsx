@@ -31,8 +31,6 @@ import '@ionic/react/css/display.css';
 import '@ionic/react/css/palettes/dark.system.css';
 
 import './theme/variables.css';
-import Login from './pages/EnterPasscode';
-import Menu from './pages/menu';
 
 setupIonicReact();
 
@@ -40,8 +38,7 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-      <Route exact path="/Tultoladmin" component={Login} />
-      <Route path="/Tultoladmin/app" component={Menu} />
+      <Route exact path="/Tultoladmin" component={Home} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

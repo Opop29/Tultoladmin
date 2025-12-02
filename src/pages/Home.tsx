@@ -21,7 +21,6 @@ import {
   IonRefresherContent,
 } from "@ionic/react";
 import {
-  logOutOutline,
   locationOutline,
   mapOutline,
   constructOutline,
@@ -53,7 +52,6 @@ interface DashboardStats {
 
 const Home: React.FC = () => {
   const history = useHistory();
-  const [loggingOut, setLoggingOut] = useState(false);
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -99,14 +97,6 @@ const Home: React.FC = () => {
     event.detail.complete();
   };
 
-  const handleLogout = () => {
-    setLoggingOut(true);
-    localStorage.removeItem("authenticated");
-    setTimeout(() => {
-      try { history.replace("/Toltul-ad/enter-passcode"); } catch {}
-      try { window.location.href = "/Toltul-ad/enter-passcode"; } catch {}
-    }, 2000);
-  };
 
   const navigateTo = (path: string) => {
     history.push(path);
@@ -171,8 +161,6 @@ const Home: React.FC = () => {
           </div>
           <div className="wave-overlay"></div>
 
-          {loggingOut && <div className="global-blur" />}
-          <IonLoading isOpen={loggingOut} message="Signing out..." spinner="crescent" />
 
           {/* Main Dashboard Container */}
           <div className="dashboard-container">
@@ -350,20 +338,6 @@ const Home: React.FC = () => {
                       </IonCard>
                     </IonCol>
 
-                    <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card logout-card" onClick={handleLogout} disabled={loggingOut}>
-                        <IonCardContent>
-                          <div className="action-content">
-                            <IonIcon icon={logOutOutline} />
-                            <div>
-                              <h3>Logout</h3>
-                              <p>Securely sign out of your account</p>
-                            </div>
-                          </div>
-                          <IonIcon icon={logOutOutline} className="action-arrow" />
-                        </IonCardContent>
-                      </IonCard>
-                    </IonCol>
                   </IonRow>
                 </IonGrid>
               </div>
