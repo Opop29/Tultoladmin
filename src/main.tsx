@@ -8,6 +8,14 @@ if (window.location.search.startsWith('/?')) {
   window.history.replaceState(null, '', path);
 }
 
+// Auto refresh on first visit to ensure proper loading
+if (!localStorage.getItem('firstVisit')) {
+  localStorage.setItem('firstVisit', 'true');
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+}
+
 const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
