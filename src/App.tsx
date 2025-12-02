@@ -30,7 +30,6 @@ import '@ionic/react/css/display.css';
 /* import '@ionic/react/css/palettes/dark.class.css'; */
 import '@ionic/react/css/palettes/dark.system.css';
 
-/* Theme variables */
 import './theme/variables.css';
 import Login from './pages/login';
 import Menu from './pages/menu';
