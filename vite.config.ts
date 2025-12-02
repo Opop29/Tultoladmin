@@ -9,7 +9,17 @@ export default defineConfig({
     react()
   ],
   build: {
-    target: 'es2020'
+    target: 'es2020',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ionic: ['@ionic/react', '@ionic/core'],
+          icons: ['ionicons'],
+          supabase: ['@supabase/supabase-js']
+        }
+      }
+    }
   },
   base :"/Tultoladmin",
   test: {
