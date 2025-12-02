@@ -3,7 +3,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Menu from './pages/menu';
-import Templat from './pages/templat';
+
 import AppMenu from './components/AppMenu';
 
 /* Core CSS required for Ionic components to work properly */
@@ -44,7 +44,7 @@ const App: React.FC = () => (
       <IonRouterOutlet id="main">
       <Route exact path="/Tultoladmin" component={Home} />
       <Route path="/Tultoladmin/menu" component={Menu} />
-      <Route path="/Tultoladmin/templat" component={Templat} />
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
