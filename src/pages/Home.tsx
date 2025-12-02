@@ -196,7 +196,7 @@ const Home: React.FC = () => {
                 <IonGrid className="stats-grid">
                   <IonRow>
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card total-markers" onClick={() => navigateTo('/Toltul-ad/report')}>
+                      <IonCard className="stat-card total-markers" onClick={() => navigateTo('/Tultoladmin/menu')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={locationOutline} />
@@ -210,7 +210,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card marker-types" onClick={() => navigateTo('/Toltul-ad/report')}>
+                      <IonCard className="stat-card marker-types" onClick={() => navigateTo('/Tultoladmin/menu')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={analyticsOutline} />
@@ -224,7 +224,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card recent-activity" onClick={() => navigateTo('/Toltul-ad/builded')}>
+                      <IonCard className="stat-card recent-activity" onClick={() => navigateTo('/Tultoladmin/templat')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={timeOutline} />
@@ -238,7 +238,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6" sizeLg="3">
-                      <IonCard className="stat-card quick-actions" onClick={() => navigateTo('/Toltul-ad/MapMarker')}>
+                      <IonCard className="stat-card quick-actions" onClick={() => navigateTo('/Tultoladmin/menu')}>
                         <IonCardContent>
                           <div className="stat-icon">
                             <IonIcon icon={addCircleOutline} />
@@ -294,7 +294,7 @@ const Home: React.FC = () => {
                 <IonGrid className="actions-grid">
                   <IonRow>
                     <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card" onClick={() => navigateTo('/Toltul-ad/MapMarker')}>
+                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/menu')}>
                         <IonCardContent>
                           <div className="action-content">
                             <IonIcon icon={mapOutline} />
@@ -309,7 +309,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card" onClick={() => navigateTo('/Toltul-ad/builded')}>
+                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/templat')}>
                         <IonCardContent>
                           <div className="action-content">
                             <IonIcon icon={constructOutline} />
@@ -324,7 +324,7 @@ const Home: React.FC = () => {
                     </IonCol>
 
                     <IonCol size="6" sizeMd="6">
-                      <IonCard className="action-card" onClick={() => navigateTo('/Toltul-ad/report')}>
+                      <IonCard className="action-card" onClick={() => navigateTo('/Tultoladmin/menu')}>
                         <IonCardContent>
                           <div className="action-content">
                             <IonIcon icon={barChartOutline} />
@@ -353,7 +353,7 @@ const Home: React.FC = () => {
                 <div className="section-content">
                   <div className="recent-activity">
                     {stats.recentMarkers.map((marker, index) => (
-                      <IonCard key={marker.id} className="activity-card" onClick={() => navigateTo('/Toltul-ad/builded')}>
+                      <IonCard key={marker.id} className="activity-card" onClick={() => navigateTo('/Tultoladmin/templat')}>
                         <IonCardContent>
                           <div className="activity-content">
                             <div className="activity-icon">
