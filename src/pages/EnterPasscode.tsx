@@ -172,26 +172,9 @@ const EnterPasscode: React.FC = () => {
             }
           }}
         />
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          zIndex: 10
-        }}>
+        <div className="passcode-container">
           {/* Header Section - Takes upper portion */}
-          <div style={{
-            flex: '0 0 45%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-            textAlign: 'center'
-          }}>
+          <div className="passcode-header">
             {/* Logo */}
             <img
               src={logo}
@@ -236,13 +219,7 @@ const EnterPasscode: React.FC = () => {
           </div>
 
           {/* Passcode Input Section - Takes lower portion */}
-          <div style={{
-            flex: '0 0 55%',
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            padding: '20px'
-          }}>
+          <div className="passcode-input">
             <div className="glass-card passcode-pin-container enhanced-card" style={{
               background: 'rgba(255, 255, 255, 0.08)',
               backdropFilter: 'blur(15px)',

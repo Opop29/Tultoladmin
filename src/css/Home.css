@@ -1,6 +1,6 @@
 .home-content {
   --background: linear-gradient(180deg, #0b2e66 0%, #1a365d 50%, #2d3748 100%);
-  padding: 10000px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -1102,13 +1102,549 @@
 .menu-list {
   background: transparent;
 }
-
 .menu-item {
   --background: rgba(255, 255, 255, 0.06);
   --color: #ffffff;
   border-radius: 12px;
   margin: 8px 12px;
 }
+
+/* Responsive Design for Mobile and Tablet */
+@media (max-width: 1024px) {
+  .home-content {
+    padding: 16px;
+  }
+
+  .home-hero {
+    padding: 40px 20px 30px;
+    margin: 16px 0;
+  }
+
+  .home-title {
+    font-size: 3rem;
+  }
+
+  .hero-taglines {
+    max-width: 500px;
+  }
+
+  .tagline-primary {
+    font-size: 16px;
+  }
+
+  .tagline-secondary {
+    font-size: 15px;
+  }
+
+  .tagline-tertiary {
+    font-size: 13px;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stat-content h2 {
+    font-size: 32px;
+  }
+
+  .stat-content p {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .action-content h3 {
+    font-size: 16px;
+  }
+
+  .action-content p {
+    font-size: 13px;
+  }
+
+  .activity-details h4 {
+    font-size: 15px;
+  }
+
+  .activity-details p {
+    font-size: 11px;
+  }
+
+  .map-display {
+    height: 240px;
+  }
+
+  .map-title {
+    font-size: 20px;
+  }
+
+  .map-subtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    padding: 12px;
+  }
+
+  .home-hero {
+    padding: 30px 16px 24px;
+    margin: 12px 0;
+  }
+
+  .home-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-taglines {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .tagline-primary {
+    font-size: 15px;
+  }
+
+  .tagline-secondary {
+    font-size: 14px;
+  }
+
+  .tagline-tertiary {
+    font-size: 12px;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .stats-grid {
+    margin: 0 0 24px 0;
+  }
+
+  .stat-card ion-card-content {
+    padding: 20px !important;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .stat-content h2 {
+    font-size: 28px;
+  }
+
+  .stat-content p {
+    font-size: 12px;
+  }
+
+  .dashboard-container {
+    padding: 0 12px;
+  }
+
+  .stats-section,
+  .map-section,
+  .actions-section,
+  .activity-section {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+  }
+
+  .map-display-container {
+    margin: 16px 0;
+  }
+
+  .map-display {
+    height: 200px;
+  }
+
+  .map-overlay {
+    padding: 16px;
+  }
+
+  .map-title {
+    font-size: 18px;
+  }
+
+  .map-subtitle {
+    font-size: 12px;
+  }
+
+  .action-card ion-card-content {
+    padding: 20px !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .action-content {
+    width: 100%;
+  }
+
+  .action-arrow {
+    align-self: flex-end;
+    margin-top: -32px;
+  }
+
+  .activity-content {
+    gap: 12px;
+  }
+
+  .marker-color-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .activity-details h4 {
+    font-size: 14px;
+  }
+
+  .activity-details p {
+    font-size: 10px;
+  }
+
+  .menu-avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    padding: 8px;
+  }
+
+  .home-hero {
+    padding: 24px 12px 20px;
+    margin: 8px 0;
+  }
+
+  .home-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-taglines {
+    gap: 8px;
+  }
+
+  .tagline-primary {
+    font-size: 14px;
+  }
+
+  .tagline-secondary {
+    font-size: 13px;
+  }
+
+  .tagline-tertiary {
+    font-size: 11px;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stat-card ion-card-content {
+    padding: 16px !important;
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .stat-content h2 {
+    font-size: 24px;
+  }
+
+  .stat-content p {
+    font-size: 11px;
+  }
+
+  .dashboard-container {
+    padding: 0 8px;
+  }
+
+  .stats-section,
+  .map-section,
+  .actions-section,
+  .activity-section {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+  }
+
+  .map-display {
+    height: 180px;
+  }
+
+  .map-overlay {
+    padding: 12px;
+  }
+
+  .map-title {
+    font-size: 16px;
+  }
+
+  .map-subtitle {
+    font-size: 11px;
+  }
+
+  .action-card ion-card-content {
+    padding: 16px !important;
+  }
+
+  .action-content ion-icon {
+    font-size: 28px;
+    min-width: 28px;
+  }
+
+  .action-content h3 {
+    font-size: 15px;
+  }
+
+  .action-content p {
+    font-size: 12px;
+  }
+
+  .action-arrow {
+    font-size: 18px;
+  }
+
+  .activity-card ion-card-content {
+    padding: 16px !important;
+  }
+
+  .activity-content {
+    gap: 10px;
+  }
+
+  .marker-color-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .activity-details h4 {
+    font-size: 13px;
+  }
+
+  .activity-details p {
+    font-size: 9px;
+  }
+
+  .menu-header {
+    margin: 12px 0 6px;
+  }
+
+  .menu-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .menu-title {
+    font-size: 16px;
+  }
+
+  .menu-subtitle {
+    font-size: 12px;
+  }
+
+  .menu-item {
+    margin: 6px 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-hero {
+    padding: 20px 10px 16px;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stat-content h2 {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .map-display {
+    height: 160px;
+  }
+
+  .map-title {
+    font-size: 14px;
+  }
+
+  .action-content h3 {
+    font-size: 14px;
+  }
+
+  .activity-details h4 {
+    font-size: 12px;
+  }
+}
+
+/* High-resolution displays */
+@media (min-width: 1440px) {
+  .home-content {
+    padding: 24px;
+  }
+
+  .home-hero {
+    padding: 60px 40px 48px;
+  }
+
+  .home-title {
+    font-size: 5rem;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .stat-content h2 {
+    font-size: 42px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .map-display {
+    height: 320px;
+  }
+
+  .action-content h3 {
+    font-size: 20px;
+  }
+
+  .activity-details h4 {
+    font-size: 18px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-hero {
+    padding: 16px 20px;
+  }
+
+  .home-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-taglines {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 16px;
+  }
+
+  .tagline-primary,
+  .tagline-secondary,
+  .tagline-tertiary {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stats-grid {
+    margin: 0 0 16px 0;
+  }
+
+  .stat-card ion-card-content {
+    padding: 12px !important;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .stat-content h2 {
+    font-size: 18px;
+  }
+
+  .stat-content p {
+    font-size: 10px;
+  }
+
+  .dashboard-container {
+    padding: 0 8px;
+  }
+
+  .stats-section,
+  .map-section,
+  .actions-section,
+  .activity-section {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .map-display {
+    height: 120px;
+  }
+
+  .action-card ion-card-content {
+    padding: 12px !important;
+  }
+
+  .activity-card ion-card-content {
+    padding: 12px !important;
+  }
+}
+
 
 
 

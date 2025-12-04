@@ -31,83 +31,172 @@
   50% { opacity: 1; }
   100% { transform: translateY(-10vh) scale(1.1); opacity: 0.2; }
 }
-/* Desktop styles (default) */
-.glass-card {
-  width: 100%;
-  max-width: auto;
-  min-height: auto;
-  margin: 32px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255,255,255,0.18);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 124, 240, 0.18);
-  backdrop-filter: blur(18px);
-  padding: 32px 16px 24px 16px;
-  animation: fadeInUp 0.7s ease;
-  position: relative;
-}
-@media (max-width: 600px) {
+/* Responsive Design for Enter Passcode */
+@media (max-width: 1024px) {
+  .glass-card {
+    max-width: 450px;
+    margin: 24px auto;
+    padding: 28px 14px 20px 14px;
+  }
+
   .app-logo,
   .enhanced-logo {
     width: 110px;
     height: 110px;
-    margin-bottom: 18px;
-    margin-top: 0;
   }
+
   .tech-title,
   .enhanced-title {
     font-size: 2.2rem;
-    margin-bottom: 8px;
-    margin-top: 0;
-    text-align: center;
   }
+
+  .gradient-title,
+  .enhanced-gradient-title {
+    font-size: 1.4rem;
+  }
+
+  .pin-boxes {
+    gap: 10px;
+  }
+
+  .pin-box {
+    width: 38px;
+    height: 48px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 24px 12px 18px 12px;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tech-title,
+  .enhanced-title {
+    font-size: 2rem;
+  }
+
   .gradient-title,
   .enhanced-gradient-title {
     font-size: 1.3rem;
-    margin-bottom: 18px;
-    margin-top: 0;
-    text-align: center;
   }
-  .tech-title,
-  .enhanced-title {
-    font-size: 3rem;
-    margin-bottom: 16px;
+
+  .pin-boxes {
+    gap: 8px;
+    margin-bottom: 20px;
   }
-  .gradient-title,
-  .enhanced-gradient-title {
-    font-size: 2.2rem;
-    margin-bottom: 24px;
+
+  .pin-box {
+    width: 36px;
+    height: 46px;
+    font-size: 1.7rem;
+  }
+
+  .passcode-modal {
+    min-width: 180px;
+    max-width: 85vw;
+    font-size: 1rem;
   }
 }
-@media (max-width: 600px) {
+
+@media (max-width: 480px) {
   .glass-card {
     width: 94vw;
-    max-width: 340px;
-    min-height: 120px;
-    max-height: 50vh;
+    max-width: 350px;
+    min-height: auto;
     margin: 16px auto;
     border-radius: 16px;
-    padding: 12px 8px 8px 8px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    overflow: visible;
-    transition: max-height 0.3s cubic-bezier(.4,2,.6,1);
+    padding: 20px 10px 16px 10px;
   }
-  .pin-boxes {
-    margin-top: 10px;
+
+  .app-logo,
+  .enhanced-logo {
+    width: 90px;
+    height: 90px;
     margin-bottom: 16px;
-    gap: 8px;
-    justify-content: center;
   }
+
+  .tech-title,
+  .enhanced-title {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .gradient-title,
+  .enhanced-gradient-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .pin-boxes {
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .pin-box {
+    width: 32px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+
   .loading-spinner {
     margin-top: 12px;
+  }
+
+  .passcode-modal {
+    min-width: 160px;
+    max-width: 80vw;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .glass-card {
+    width: 96vw;
+    max-width: 320px;
+    padding: 16px 8px 12px 8px;
+  }
+
+  .app-logo,
+  .enhanced-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tech-title,
+  .enhanced-title {
+    font-size: 1.6rem;
+  }
+
+  .gradient-title,
+  .enhanced-gradient-title {
+    font-size: 1.1rem;
+  }
+
+  .pin-boxes {
+    gap: 4px;
+  }
+
+  .pin-box {
+    width: 28px;
+    height: 38px;
+    font-size: 1.3rem;
+  }
+
+  .passcode-modal {
+    min-width: 140px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -133,16 +222,15 @@
 }
 
 .glass-card {
-  width: auto;
-  margin: 50px 400px;
+  width: 100%;
+  max-width: 500px;
+  margin: 32px auto;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   background: rgba(255,255,255,0.18);
   border-radius: 24px;
-  border-style: solid;
-  border-color: rgb(26, 26, 214);
+  border: 2px solid rgb(26, 26, 214);
   box-shadow: 0 8px 32px #0b2db590;
   backdrop-filter: blur(18px);
   padding: 32px 16px 24px 16px;
@@ -391,4 +479,59 @@
   0% { top: 100vh; opacity: 0.7; }
   50% { opacity: 1; }
   100% { top: -60px; opacity: 0.2; }
+}
+
+/* Responsive layout classes */
+.passcode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.passcode-header {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.passcode-input {
+  flex: 0 0 55%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .passcode-header {
+    flex: 0 0 35%;
+    padding: 16px;
+  }
+
+  .passcode-input {
+    flex: 0 0 65%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .passcode-header {
+    flex: 0 0 30%;
+    padding: 12px;
+  }
+
+  .passcode-input {
+    flex: 0 0 70%;
+    padding: 12px;
+  }
 }

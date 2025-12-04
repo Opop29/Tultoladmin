@@ -128,6 +128,14 @@
   transform: translateY(-50%) scale(0.95);
 }
 
+.slide-toggle-btn {
+  left: 10px;
+}
+
+.options-wrapper.open ~ .slide-toggle-btn {
+  left: calc(280px + 20px);
+}
+
 .calendar-wrapper {
   position: absolute;
   top: 10px;
@@ -185,6 +193,10 @@
     width: 200px;
     border-radius: 20px;
     padding: 10px;
+  }
+
+  .options-wrapper.open ~ .slide-toggle-btn {
+    left: calc(200px + 20px);
   }
 }
 
