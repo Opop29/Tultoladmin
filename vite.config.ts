@@ -21,7 +21,7 @@ export default defineConfig({
       }
     }
   },
-  base :"/Tultoladmin",
+  base: "/",
   test: {
     globals: true,
     environment: 'jsdom',
